@@ -29,7 +29,7 @@ const SignUp = () => {
     }
 
     axios
-      .post("http://localhost:8000/users/signup", data)
+      .post("https://brillsconnect-backend.herokuapp.com/users/signup", data)
       .then((res) => {
         console.log(res.status);
         setSuccessMessage(res.data.message);
@@ -62,6 +62,7 @@ const SignUp = () => {
             placeholder="Email"
             value={data.email}
             onChange={onChange}
+            required
           />
         </div>
         <div className="formgroup">
@@ -74,10 +75,16 @@ const SignUp = () => {
             placeholder="Phone Number"
             value={data.phone}
             onChange={onChange}
+            required
           />
         </div>
         <div className="formgroup">
-          <select name="interest" value={data.interest} onChange={onChange}>
+          <select
+            name="interest"
+            value={data.interest}
+            onChange={onChange}
+            required
+          >
             <option value="none">I am interested in:</option>
             <option value="football">Football</option>
             <option value="basketball">Basketball</option>
@@ -99,6 +106,7 @@ const SignUp = () => {
             placeholder="Password"
             value={data.password}
             onChange={onChange}
+            required
           />
         </div>
         <div className="formgroup">

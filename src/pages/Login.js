@@ -51,6 +51,7 @@ const Login = () => {
             name="email"
             value={data.email}
             onChange={onChange}
+            required
           />
         </div>
         <div className="formgroup">
@@ -63,6 +64,7 @@ const Login = () => {
             name="password"
             value={data.password}
             onChange={onChange}
+            required
           />
         </div>
         <div className="formgroup">

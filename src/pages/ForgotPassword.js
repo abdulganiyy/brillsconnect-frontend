@@ -60,6 +60,7 @@ const ForgotPassword = () => {
             name="email"
             value={data.email}
             onChange={onChange}
+            required
           />
         </div>
         <div className="formgroup">
@@ -72,6 +73,7 @@ const ForgotPassword = () => {
             name="newPassword"
             value={data.newPassword}
             onChange={onChange}
+            required
           />
         </div>
         <div className="formgroup">

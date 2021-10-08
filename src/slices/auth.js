@@ -6,7 +6,7 @@ export const login = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/users/login",
+        "https://brillsconnect-backend.herokuapp.com/users/login",
         data
       );
       return response.data;
@@ -27,7 +27,7 @@ export const updateUser = createAsyncThunk("user/updateUser", async (data) => {
   console.log(data);
 
   const response = await axios.patch(
-    `http://localhost:8000/users/${data.id}`,
+    `https://brillsconnect-backend.herokuapp.com/users/${data.id}`,
     { username: data.username, email: data.email, password: data.password },
     config
   );
