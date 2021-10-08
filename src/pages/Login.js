@@ -12,7 +12,7 @@ const Login = () => {
 
   const [errMessage, setErrMessage] = React.useState("");
 
-  const { errorMessage, loggedIn } = useSelector((state) => state.authReducer);
+  const { errorMessage, user } = useSelector((state) => state.authReducer);
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -39,7 +39,7 @@ const Login = () => {
   return (
     <div className="login-wrapper">
       {errMessage ? <div className="fail">{errMessage}</div> : null}
-      {loggedIn === true ? <Redirect to="/profile" /> : null}
+      {user.isVerified === true ? <Redirect to="/profile" /> : null}
       <form className="form" onSubmit={onSubmit}>
         <div className="formgroup">
           <label htmlFor="email">Email</label>
