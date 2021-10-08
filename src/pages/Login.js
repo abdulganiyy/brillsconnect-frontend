@@ -39,7 +39,7 @@ const Login = () => {
   return (
     <div className="login-wrapper">
       {errMessage ? <div className="fail">{errMessage}</div> : null}
-      {user.isVerified === true ? <Redirect to="/profile" /> : null}
+      {user && user.isVerified === true && <Redirect to="/profile" />}
       <form className="form" onSubmit={onSubmit}>
         <div className="formgroup">
           <label htmlFor="email">Email</label>
