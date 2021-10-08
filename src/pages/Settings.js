@@ -26,8 +26,6 @@ const Settings = ({ history }) => {
   });
 
   React.useEffect(() => {
-    let isActive = true;
-
     if (user) {
       setData({
         id: user._id,
@@ -36,11 +34,7 @@ const Settings = ({ history }) => {
         password: user.password,
       });
     }
-
-    return () => {
-      isActive = false;
-    };
-  }, [dispatch, user]);
+  }, [user]);
 
   const onChangeHandler = (e) => {
     setData({
